@@ -59,7 +59,7 @@ This end-to-end pipeline demonstrates practical skills in **EDA, data preprocess
 | K-Nearest Neighbors     | 65%      | Struggled with imbalanced data       |
 | Support Vector Machine  | 81%      | Best overall performance              |
 | Random Forest           | 57%      | Overfitting issues, high variance     |
-| Decision Tree (tested)  | (N/A)    | Explored but not finalized            |
+| Decision Tree (tested)  | 59%    | Overfitting issues, high variance       |
 
 ✅ Evaluation Metrics: Accuracy, Precision, Recall, F1-Score, Confusion Matrix  
 ✅ Train-Test Split: 80:20  
