@@ -1,105 +1,154 @@
-# 🚢 Titanic Survival Prediction – Machine Learning    
-**Author:** Nitish Raj Vinnakota | [LinkedIn](https://linkedin.com/in/vnr-nitish)
+# Titanic Survival Classification using Machine Learning
+
+## Project Overview
+
+This project predicts the survival of Titanic passengers using Machine Learning classification techniques. The implementation includes data preprocessing, missing value handling, feature engineering, model training, and comparison of multiple classification algorithms to identify the best-performing model.
+
+The project evaluates different models and analyzes their prediction performance using standard evaluation metrics.
 
 ---
 
-## 🔍 Project Overview
+## Features
 
-This project tackles the classic **Titanic dataset challenge**, where the goal is to predict which passengers survived the Titanic shipwreck. By analyzing passenger attributes such as age, gender, fare, and class, we apply **supervised machine learning algorithms** to determine survival probabilities.
-
-This end-to-end pipeline demonstrates practical skills in **EDA, data preprocessing, encoding, feature selection, model building, and evaluation** using industry-standard tools.
-
----
-
-## 🎯 Objective
-
-> To build a robust classification model that predicts whether a passenger survived or not, based on features like age, sex, fare, and socio-economic class.
+✔ Data cleaning and preprocessing  
+✔ Missing value handling using SimpleImputer  
+✔ Feature transformation and encoding  
+✔ Exploratory Data Analysis (EDA)  
+✔ Multiple machine learning algorithms implementation  
+✔ Model performance comparison  
+✔ Visualization and evaluation metrics  
 
 ---
 
-## 📁 Dataset
+## Dataset Information
 
-- **Source:** [Kaggle – Titanic Dataset](https://www.kaggle.com/datasets/yasserh/titanic-dataset)
-- **Rows:** 891 passengers  
-- **Features:** 12 columns including:
-  - `Survived` (Target), `Pclass`, `Name`, `Sex`, `Age`, `SibSp`, `Parch`, `Ticket`, `Fare`, `Cabin`, `Embarked`
+Dataset: Titanic Dataset
 
----
+Features used include:
 
-## 🧹 Data Preprocessing & Cleaning
+- Passenger ID
+- Passenger Class (Pclass)
+- Sex
+- Age
+- Siblings/Spouses aboard (SibSp)
+- Parents/Children aboard (Parch)
+- Fare
+- Embarked
 
-- Dropped columns with high missing values: `Cabin`, `Name`, `Ticket`
-- Filled missing values:
-  - `Age`: mean
-  - `Embarked`: mode
-- Removed irrelevant columns: `PassengerId`, etc.
-- Encoded categorical features (`Sex`, `Embarked`, `Pclass`) using:
-  - `LabelEncoder`, `OneHotEncoder`, and `pd.get_dummies`
-- Scaled numerical features where required using `StandardScaler`
+Target Variable:
 
----
+**Survived**
 
-## 📊 Exploratory Data Analysis (EDA)
-
-- Plotted survival rates by gender, class, port of embarkation, and family members onboard
-- Observed survival trends:
-  - Females had higher survival rates than males
-  - Higher-class passengers had a better chance of survival
-  - Age group 20–40 had higher mortality
-- Outlier detection via boxplots (notably in `Fare` and `Age`)
-- Used correlation heatmaps to identify important relationships between features
+- 0 → Did not survive
+- 1 → Survived
 
 ---
 
-## 🧠 Machine Learning Models Used
+## Technologies Used
 
-| Model                   | Accuracy | Notes                                 |
-|------------------------|----------|---------------------------------------|
-| Logistic Regression     | 79%      | Baseline model, balanced performance |
-| K-Nearest Neighbors     | 65%      | Struggled with imbalanced data       |
-| Support Vector Machine  | 81%      | Best overall performance              |
-| Random Forest           | 57%      | Overfitting issues, high variance     |
-| Decision Tree (tested)  | 59%    | Overfitting issues, high variance       |
-
-✅ Evaluation Metrics: Accuracy, Precision, Recall, F1-Score, Confusion Matrix  
-✅ Train-Test Split: 80:20  
-✅ Used `Pipeline` for consistent preprocessing and modeling
+- Python
+- Jupyter Notebook
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-Learn
 
 ---
 
-## 📌 Key Skills Demonstrated
+## Data Preprocessing Steps
 
-- `Pandas`, `NumPy`, `Matplotlib`, `Seaborn`
-- `scikit-learn`: Classifiers, Pipelines, Imputation
-- Label and One-Hot Encoding
-- Outlier Handling & Data Imputation
-- Cross-model comparison & accuracy tuning
+### Data Cleaning
+Removed unnecessary columns:
 
----
+- Name
+- Ticket
+- Cabin
 
-## 🏁 Results & Conclusion
+### Missing Value Handling
 
-- **SVC (Support Vector Classifier)** achieved the best result with **81% testing accuracy**
-- Logistic Regression followed closely with 79% accuracy
-- KNN and Random Forest showed overfitting or poor generalization
-- The project proves how thoughtful preprocessing and model choice impact predictive power
+- Mean imputation
+- Median imputation
+- Most frequent value handling
+- SimpleImputer
 
----
+### Feature Engineering
 
-## 🚀 Future Enhancements
-
-- Add **hyperparameter tuning** using `GridSearchCV`
-- Include **ensemble methods** like XGBoost or Gradient Boosting
-- Address class imbalance using `SMOTE` or `class_weight`
-- Build a **frontend using Streamlit** for user-friendly prediction interface
+- One-hot encoding
+- Dummy variable generation
+- Feature scaling using StandardScaler
 
 ---
 
-## 📫 Contact
+## Machine Learning Models Used
 
-**Email:** nvinnako2@gitam.in  
-**LinkedIn:** [linkedin.com/in/vnr-nitish](https://linkedin.com/in/vnr-nitish)
+1. Logistic Regression
+2. K-Nearest Neighbors (KNN)
+3. Support Vector Classifier (SVC)
+4. Random Forest Classifier
+5. Decision Tree Classifier
+6. AdaBoost Classifier
 
 ---
 
-> *"A data-driven story of survival and model optimization through real-world insights."*
+## Workflow
+
+1. Import required libraries
+2. Load Titanic dataset
+3. Perform data cleaning
+4. Handle missing values
+5. Encode categorical variables
+6. Scale features
+7. Split data into training and testing datasets
+8. Train multiple ML models
+9. Generate predictions
+10. Compare performance metrics
+
+---
+
+## Evaluation Metrics
+
+Models were evaluated using:
+
+- Accuracy Score
+- Classification Report
+- Confusion Matrix
+- Training Score
+- Testing Score
+
+---
+
+## Results
+
+### Model Performance Comparison
+
+| Model | Accuracy Score |
+|---------|--------------|
+| SVC | 81.01% |
+| Logistic Regression | 79.33% |
+| KNN | 64.80% |
+| Decision Tree Classifier | 59.22% |
+| AdaBoost Classifier | 59.22% |
+| Random Forest Classifier | 56.98% |
+
+### Best Performing Model
+
+**Support Vector Classifier (SVC)** achieved the highest accuracy of **81.01%**, making it the best-performing model for this Titanic survival prediction task.
+
+---
+
+## Future Enhancements
+
+- Hyperparameter tuning
+- Cross-validation
+- Deep learning implementation
+- Deployment using Flask or Streamlit
+- Further feature engineering
+
+---
+
+## Author
+
+**Vinnakota Nitish Raj**
+
+GitHub: https://github.com/vnr-nitish
